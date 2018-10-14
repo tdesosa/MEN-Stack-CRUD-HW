@@ -11,6 +11,7 @@
             <% for(let i = 0; i < bikes.length; i++){ %>
                 <li>
                   <a href="/bikes/<%=bikes[i].id%>"><%=bikes[i].name%></a>
+                  <button><a href="/bikes/<%=bikes[i].id%>/edit">Edit/Delete</a></button>
                 </li>
             <% } %>    
         </ul>

@@ -8,11 +8,15 @@
     <body>
         <h1>Edit Bikes Page:</h1>
         <form method="POST" action="/bikes/<%=bike.id%>?_method=PUT">
-    <!--  NOTE: the form is pre-populated with values for the server-->
             Name: <input type="text" name="name" value="<%=bike.name%>"/><br/>
             Type: <input type="text" name="type" value="<%=bike.type%>"/><br/>
             <br/>
             <input type="submit" name="" value="Submit Changes"/>
+        </form>
+
+    <!--  Delete Form-->
+        <form action="/bikes/<%=bike.id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete">
         </form>
     </body>
 </html>
