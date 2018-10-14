@@ -68,5 +68,14 @@ router.put('/:id', (req, res) => {
   });
 });
 
+// Delete Route
+
+router.delete('/:id', (req, res) => {
+  console.log(req.params.id, ' id in delete route');
+  Bikes.findByIdAndRemove(req.params.id, (err, deleteBike) => {
+    res.redirect('/bikes');
+  });
+});
+
 
 module.exports = router;
