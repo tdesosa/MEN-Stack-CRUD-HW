@@ -12,11 +12,29 @@ router.get('/', (req, res) => {
         console.log(err);
       } else {
         console.log(allBikes)
-        res.render('index.ejs', {bikes: Bikes});
+        res.render('index.ejs', {bikes: allBikes});
         }
     });
 });
 
-// New Route
+// New Page
+
+router.get('/new', (req, res) => {
+  res.render('new.ejs');
+});
+
+// Create Route
+
+router.post('/', (req, res) => {
+  Bikes.create(req.body, (err, createdBike) => {
+    if(err){
+      console.log(err)
+    } else {
+      console.log(createdBike);
+      res.redirect('/bikes')
+    }
+  })
+});
+
 
 module.exports = router;
