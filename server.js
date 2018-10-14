@@ -12,6 +12,12 @@ const methodOverride = require('method-override');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
+// Require The Controller
+const bikesController = require('./controllers/bikesController')
+
+// Set Up Routes In SoccerTems Controller
+app.use('/bikes', bikesController);
+
 // Set Up a Landing Page
 app.get('/', (req, res) => {
     res.render('landing.ejs');
