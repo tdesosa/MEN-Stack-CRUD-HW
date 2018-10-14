@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Edit Bikes Page</title>
+        <link rel="stylesheet" href="/css/app.css">
+    </head>
+    <body>
+        <h1>Edit Bikes Page:</h1>
+        <form method="POST" action="/bikes/<%=bike.id%>?_method=PUT">
+    <!--  NOTE: the form is pre-populated with values for the server-->
+            Name: <input type="text" name="name" value="<%=bike.name%>"/><br/>
+            Type: <input type="text" name="type" value="<%=bike.type%>"/><br/>
+            <br/>
+            <input type="submit" name="" value="Submit Changes"/>
+        </form>
+    </body>
+</html>
